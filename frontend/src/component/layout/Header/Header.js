@@ -1,47 +1,37 @@
 import React from "react";
-import { Link } from 'react-router-dom';
-import { ReactNavbar } from "overlay-navbar";
-import logo from "../../../images/logo.png";
-
-const options = {
-	burgerColorHover: "#eb4034",
-	logo,
-	logoWidth: "20vmax",
-	navColor1: "white",
-	logoHoverSize: "10px",
-	logoHoverColor: "#eb4034",
-	link1Text: "Home",
-	link2Text: "Products",
-	link3Text: "Contact",
-	link4Text: "About",
-	link1Url: "/",
-	link2Url: "/products",
-	link3Url: "/contact",
-	link4Url: "/about",
-	link1Size: "1.3vmax",
-	link1Color: "rgba(35, 35, 35,0.8)",
-	nav1justifyContent: "flex-end",
-	nav2justifyContent: "flex-end",
-	nav3justifyContent: "flex-start",
-	nav4justifyContent: "flex-start",
-	link1ColorHover: "#eb4034",
-	link1Margin: "1vmax",
-	profileIconUrl: "/login",
-	profileIconColor: "rgba(35, 35, 35,0.8)",
-	searchIconColor: "rgba(35, 35, 35,0.8)",
-	cartIconColor: "rgba(35, 35, 35,0.8)",
-	profileIconColorHover: "#eb4034",
-	searchIconColorHover: "#eb4034",
-	cartIconColorHover: "#eb4034",
-	cartIconMargin: "1vmax",
-};
+import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
+import { useDispatch, useSelector } from "react-redux";
 
 const Header = () => {
 
-	return <ReactNavbar {...options} />;
-	// return (
+	const dispatch = useDispatch();
+	const { user, isAuthenticated } = useSelector((state) => state.user);
 
-	// )
+	return (
+		<>
+			<Navbar bg='dark' variant='dark' expand='lg' collapseOnSelect>
+				<Container>
+					<Navbar.Brand href='/'>CartCom</Navbar.Brand>
+					<Navbar.Toggle aria-controls='basic-navbar-nav' />
+					<Navbar.Collapse id='basic-navbar-nav'>
+						<Nav className='ml-auto'>
+							<Nav.Link href='/'>Home</Nav.Link>
+							<Nav.Link href='/products'>Products</Nav.Link>
+							<Nav.Link href='/cart'>Cart</Nav.Link>
+							<Nav.Link href='/search'>Search</Nav.Link>
+							<NavDropdown title={
+								isAuthenticated ? user.name : 'Account'
+							} id='basic-nav-dropdown'>
+								<NavDropdown.Item href='/login'>Login</NavDropdown.Item>
+								<NavDropdown.Divider />
+								<NavDropdown.Item href='/register'>Register</NavDropdown.Item>
+							</NavDropdown>
+						</Nav>
+					</Navbar.Collapse>
+				</Container>
+			</Navbar>
+		</>
+	)
 
 };
 

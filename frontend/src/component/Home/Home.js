@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { CgMouse } from "react-icons/all";
 import "./Home.css";
 import ProductCard from "./ProductCard.js";
@@ -6,9 +6,10 @@ import MetaData from "../layout/MetaData";
 import { clearErrors, getProduct } from "../../actions/productAction";
 import { useSelector, useDispatch } from "react-redux";
 import Loader from "../layout/Loader/Loader";
+import Search from "../Product/Search";
 import { useAlert } from "react-alert";
 
-const Home = () => {
+const Home = ({ history }) => {
 
 	const alert = useAlert();
 	const dispatch = useDispatch();
@@ -29,14 +30,17 @@ const Home = () => {
 			) : (
 				<Fragment>
 					<MetaData title="Torqart" />
-					<div className="banner">
+					<div className="searchBox">
+						<Search history={history} />
+					</div>
+					{/* <div className="banner">
 						<p>Welcome to <span>TORQART</span> </p>
 						<a href="#container">
 							<button>
 								Scroll <CgMouse />
 							</button>
 						</a>
-					</div>
+					</div> */}
 					<h2 className="homeHeading">Featured Products</h2>
 					<div className="container" id="container">
 						{products &&

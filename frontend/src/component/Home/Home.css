@@ -1,54 +1,11 @@
-.banner {
-  background-image: url("../../images/BGHome.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vmin;
+.searchBox {
+  width: 100%;
+  height: 100%;
   display: flex;
-  flex-direction: column;
-  text-align: center;
-  align-items: center;
+  flex-direction: row;
   justify-content: center;
-  color: white;
-}
-
-.banner > p {
-  font: 300 3vmax "Lucida Sans";
-  color: black;
-  margin-bottom: 120px;
-}
-
-.banner > p > span {
-  color: rgb(101, 179, 65);
-  font-weight: bold;
-}
-
-.banner > a > button {
-  margin-bottom: 5vmax;
-  cursor: pointer;
-  background-color: white;
-  border: 1px solid white;
-  border-radius: 0;
-  padding: 1vmax;
-  transition: all 0.5s;
-  width: 9vmax;
-  font: 500 1vmax "Roboto";
-}
-.banner > a > button:hover {
-  background-color: rgba(255, 255, 255, 0);
-  color: white;
-}
-
-.banner::after {
-  content: "";
-  width: 100vw;
-  height: 100vmin;
-  background-color: #ffffff;
-  position: absolute;
-  top: 0%;
-  left: 0;
-  clip-path: polygon(100% 68%, 0 100%, 100% 100%);
-  max-width: 100%;
+  align-items: center;
+  margin-top: 10px;
 }
 
 .homeHeading {
@@ -80,6 +37,7 @@
   margin: 2vmax;
   transition: all 0.5s;
   padding-bottom: 0.5vmax;
+  border: 3px solid rgba(0, 0, 0, 0.171);
 }
 
 .productCard > img {
@@ -107,7 +65,7 @@
 
 .productCard > span {
   margin: 0.5vmax;
-  color: tomato;
+  color: rgb(52 58 64);
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 1vmax;
 }

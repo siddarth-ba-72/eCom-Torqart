@@ -9,9 +9,10 @@ import Slider from "@material-ui/core/Slider";
 import { useAlert } from "react-alert";
 import Typography from "@material-ui/core/Typography";
 import MetaData from "../layout/MetaData";
+import Search from "./Search";
 import { categories } from "../Utils/CategoriesList.js";
 
-const Products = ({ match }) => {
+const Products = ({ match, history }) => {
 
 	const dispatch = useDispatch();
 	const alert = useAlert();
@@ -56,12 +57,17 @@ const Products = ({ match }) => {
 			) : (
 				<Fragment>
 					<MetaData title="PRODUCTS -- Torqart" />
+					<div className="searchBox">
+						<Search history={history} />
+					</div>
 					<h2 className="productsHeading">Products</h2>
 					<div className="products">
-						{products &&
+						{
+							products &&
 							products.map((product) => (
 								<ProductCard key={product._id} product={product} />
-							))}
+							))
+						}
 					</div>
 					<div className="filterBox">
 						<Typography>Price</Typography>

@@ -11,7 +11,7 @@
 
 .emptyCart > svg {
   font-size: 5vmax;
-  color: rgb(101, 179, 65);
+  color: rgb(52 58 64);
 }
 
 .emptyCart > p {
@@ -33,7 +33,7 @@
 }
 
 .cartHeader {
-  background-color: rgb(101, 179, 65);
+  background-color: rgb(52 58 64);
   width: 90%;
   box-sizing: border-box;
   margin: auto;
@@ -103,7 +103,7 @@
 }
 
 .cartGrossProfitBox {
-  border-top: 3px solid rgb(101, 179, 65);
+  border-top: 3px solid rgb(52 58 64);
   margin: 1vmax 4vmax;
   box-sizing: border-box;
   padding: 2vmax 0;
@@ -117,7 +117,7 @@
   justify-content: flex-end;
 }
 .checkOutBtn > button {
-  background-color: rgb(101, 179, 65);
+  background-color: rgb(52 58 64);
   color: white;
   border: none;
   padding: 0.8vmax 4vmax;
@@ -130,7 +130,8 @@
 }
 
 .checkOutBtn > button:hover {
-  background-color: rgb(42, 97, 17);
+  background-color: rgb(172, 173, 173);
+  color: rgb(52 58 64);
 }
 
 @media screen and (max-width: 600px) {
@@ -162,6 +163,7 @@
     width: 2vmax;
     padding: 1.5vmax;
     font: 400 1.8vmax "Roboto";
+    color: rgba(0, 0, 0, 0.74);
   }
 
   .cartSubtotal {
